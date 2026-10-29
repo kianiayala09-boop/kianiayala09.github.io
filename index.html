@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio & Core Engineering Suite</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --text-muted: #666666;
+            --accent-color: #2563eb;
+            --border-color: #e5e7eb;
+            --card-bg: #f9fafb;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0f172a;
+                --text-color: #f8fafc;
+                --text-muted: #94a3b8;
+                --accent-color: #3b82f6;
+                --border-color: #334155;
+                --card-bg: #1e293b;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.25rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Arcade Matrix Grid Selectors */
+        .arcade-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            max-height: 220px;
+            overflow-y: auto;
+            padding: 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background: rgba(0,0,0,0.02);
+        }
+
+        .game-selector-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.4rem;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .game-selector-btn.active {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        .game-wrapper {
+            position: relative;
+            width: 100%;
+            background: #000000;
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 1rem 0;
+            aspect-ratio: 16 / 9;
+            border: 1px solid var(--border-color);
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .game-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            z-index: 10;
+        }
+
+        .game-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.75rem;
+        }
+
+        .tag {
+            background-color: var(--border-color);
+            color: var(--text-color);
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Your Name</h1>
+            <p class="title">Systems Engineer & Interactive Web Architect</p>
+            <div class="links">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome to my professional engineering terminal. The console array below showcases procedurally generated graphical models rendering on standard hardware via pure client-side scripting.</p>
+        </section>
+
+        <section id="arcade-matrix-section">
+            <h2>Computational Logic Showcase (52 Arcade Variations)</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Select any of the 52 procedural modules below to dynamically inject engine calculations into the isolated hardware viewport matrix.</p>
+            
+            <!-- 52-In-1 Select Matrix Container -->
+            <div class="arcade-controls" id="matrixSelectorGrid"></div>
+
+            <div class="project-card">
+                <div class="project-title" id="activeGameTitle">Loading Module...</div>
+                <p id="activeGameDesc" style="color: var(--text-muted); font-size: 0.9rem;">Initializing sub-routine parameters.</p>
+                
+                <div class="game-wrapper">
+                    <canvas id="matrixCanvas" width="800" height="450"></canvas>
+                    <div id="matrixOverlay" class="game-overlay">
+                        <h3 id="overlayTitle">SYSTEM INITIALIZED</h3>
+                        <p id="overlayControls" style="font-size: 0.85rem; margin-top: 0.5rem; color: #cbd5e1;"></p>
+                        <button class="game-btn" onclick="launchActiveGame()">Execute Matrix</button>
+                    </div>
+                </div>
+                <div class="tags"><span class="tag">Zero External Assets</span><span class="tag">Procedural Execution</span></div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Your Name. Optimized for client-side processing configurations.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Prevent accidental arrow/space bar document jumps 
+        window.addEventListener('keydown', e => {
+            if (['Space', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.code)) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+        const overlay = document.getElementById('matrixOverlay');
+        
+        // 52 Game Names divided into 4 core mechanics families to keep file small but highly functional
+        const gameTypes = ["Space shooter", "Snake runner", "Velocity jumper", "Laser blocker"];
+        const themes = [
+            "Alpha", "Beta", "Omega", "Cyber", "Retro", "Matrix", "Neon", "Quantum", "Shadow", "Vector", 
+            "Void", "Pulse", "Grid", "Solar", "Cosmic", "Hyper", "Chrono", "Glitch", "Titan", "Phantom", 
+            "Apex", "Delta", "Nexus", "Zone", "Spectre", "Nebula"
+        ];
+
+        let gamesList = [];
+        // Procedurally generate 52 distinct game setups
+        let index = 1;
+        for (let i = 0; i < themes.length; i++) {
+            for (let j = 0; j < gameTypes.length; j++) {
+                if (index <= 52) {
+                    gamesList.push({
+                        id: index,
+                        name: `${index}. ${themes[i]} ${gameTypes[j]}`,
+                        engine: gameTypes[j],
+                        color: `hsl(${(index * 65) % 360}, 75%, 55%)`,
+                        enemyColor: `hsl(${(index * 65 + 140) % 360}, 80%, 50%)`,
+                        speedModifier: 1 + (index * 0.05)
+                    });
+                    index++;
+                }
+            }
+        }
+
+        let activeGame = gamesList[0];
+        let gameRunning = false;
+        let score = 0, player, elements, keys = {}, loopRef;
+
+        // Build Selector Layout Grid UI
+        const grid = document.getElementById('matrixSelectorGrid');
+        gamesList.forEach(g => {
+            const btn = document.createElement('button');
+            btn.className = `game-selector-btn ${g.id === 1 ? 'active' : ''}`;
+            btn.innerText = g.name;
+            btn.id = `btn-${g.id}`;
+            btn.onclick = () => selectGame(g.id);
+            grid.appendChild(btn);
+        });
+
+        function selectGame(id) {
+            cancelAnimationFrame(loopRef);
+            gameRunning = false;
+            document.querySelectorAll('.game-selector-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(`btn-${id}`).classList.add('active');
+            
+            activeGame = gamesList.find(g => g.id === id);
+            document.getElementById('activeGameTitle').innerText = activeGame.name;
+            
